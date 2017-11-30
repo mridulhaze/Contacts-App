@@ -20,17 +20,16 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private FloatingActionButton btnFAB;
-    private Toolbar toolbar;
-    private DrawerLayout drawer;
-    private ActionBarDrawerToggle toogle;
-    private NavigationView navigationView;
+    FloatingActionButton btnFAB;
+    Toolbar toolbar;
+    DrawerLayout drawer;
+    ActionBarDrawerToggle toogle;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         addControls();
         addEvents();
@@ -53,25 +52,26 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void addControls() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        toolbar =  findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
-        btnFAB = (FloatingActionButton) findViewById(R.id.btnFAB);
+        btnFAB = findViewById(R.id.btnFAB);
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         toogle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         );
 
-
-        navigationView = (NavigationView) findViewById(R.id.nav_panel);
+        navigationView = findViewById(R.id.nav_panel);
 
 
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -106,17 +106,13 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_import) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_sync) {
 
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 

@@ -14,11 +14,10 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
+            style="@style/AppTheme.PopupOverlay"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            style="@style/AppTheme.PopupOverlay">
-        </android.support.v7.widget.Toolbar>
+            android:background="?attr/colorPrimary"></android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -30,6 +29,6 @@
         android:id="@+id/btnFAB"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:src="@mipmap/ic_person_add_white_24dp"/>
+        android:src="@mipmap/ic_person_add"/>
 
 </android.support.design.widget.CoordinatorLayout>
