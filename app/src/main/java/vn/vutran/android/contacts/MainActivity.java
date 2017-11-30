@@ -103,11 +103,13 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+
         int id = item.getItemId();
 
-        if (id == R.id.nav_import) {
-            // Handle the camera action
+        if (id == R.id.nav_login) {
+
+        } else if (id == R.id.nav_import) {
+
         } else if (id == R.id.nav_sync) {
 
         } else if (id == R.id.nav_manage) {
@@ -116,7 +118,7 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
