@@ -1,6 +1,6 @@
 package vn.vutran.android.contacts;
 
-import android.support.annotation.NonNull;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -13,9 +13,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewDebug;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -105,8 +102,13 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
 
         int id = item.getItemId();
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
         if (id == R.id.nav_login) {
+
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity( intent );
+            drawer.closeDrawer(GravityCompat.START);
 
         } else if (id == R.id.nav_import) {
 
@@ -118,7 +120,6 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
