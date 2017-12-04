@@ -130,7 +130,7 @@ public class SMSActivity extends AppCompatActivity {
             if (accessToken != null) {
                 toastMessage = "Success:" + accessToken.getAccountId()
                         + tokenRefreshIntervalInSeconds;
-                startActivity(new Intent(this, SMSActivity.class));
+                startActivity(new Intent(this, RegisterActivity.class));
             } else {
                 toastMessage = "Unknown response type";
             }
