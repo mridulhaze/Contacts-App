@@ -128,8 +128,9 @@ public class SMSActivity extends AppCompatActivity {
             final long tokenRefreshIntervalInSeconds =
                     loginResult.getTokenRefreshIntervalInSeconds();
             if (accessToken != null) {
-                toastMessage = "Success:" + accessToken.getAccountId()
-                        + tokenRefreshIntervalInSeconds;
+
+                toastMessage = "Success:" + accessToken.getAccountId() + tokenRefreshIntervalInSeconds;
+
                 startActivity(new Intent(this, RegisterActivity.class));
             } else {
                 toastMessage = "Unknown response type";

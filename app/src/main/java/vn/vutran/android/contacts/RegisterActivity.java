@@ -67,6 +67,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 String name     = edtName.getText().toString();
                 String phone    = edtPhone.getText().toString();
                 String password = edtPassword.getText().toString();
+                String[] fullPhoneNumber = phone.split(" ");
+
+                String countryCode = fullPhoneNumber[0].trim();
+                countryCode = countryCode.substring(1, countryCode.length() -1 );
+
+                String phoneNumber = fullPhoneNumber[1].trim();
+                phoneNumber = '0' + phoneNumber;
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -102,7 +109,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     }
                 };
 
-                RegisterRequest registerRequest = new RegisterRequest(name, phone, password, responseListener);
+                RegisterRequest registerRequest = new RegisterRequest(name, phoneNumber, password, responseListener);
                 RequestQueue queue = Volley.newRequestQueue( RegisterActivity.this );
                 queue.add( registerRequest );
 
@@ -125,8 +132,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                 final TextView edtPhone     = findViewById(R.id.edt_rgPhone);
                 final PhoneNumber number    = account.getPhoneNumber();
+                String countryCode = number.getCountryCode();
 
-                edtPhone.setText(number == null ? null : number.toString());
+                String fullNumber = '(' + countryCode + ')' + ' ' + number.getPhoneNumber();
+                edtPhone.setText(number == null ? null : fullNumber);
                 edtPhone.setEnabled(false);
                 edtPhone.setFocusable(false);
             }
