@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <Button
+        android:id="@+id/btnOptsImportPhone"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"
+        android:minWidth="35dp"
+        android:textStyle="normal"
+        android:text="@string/menu_import_phone" />
+
+    <Button
+        android:id="@+id/btnOptsImportVCard"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:text="@string/menu_import_vcard" />
+
+    <Button
+        android:id="@+id/btnOptsImportCSV"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:text="@string/menu_import_csv" />
+
+</LinearLayout>

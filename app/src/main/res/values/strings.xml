@@ -16,6 +16,27 @@
     <string name="btn_logout">LOGOUT</string>
     <string name="name">Fullname</string>
 
+    <!-- Navigation menu -->
+    <string name="menu_login">Login</string>
+    <string name="menu_import">Import</string>
+    <string name="menu_sync">Sync</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_communicate">Communicate</string>
+    <string name="menu_share">Share</string>
+
+    <!-- Options import contacts -->
+    <string name="menu_import_title">Import from</string>
+    <string name="menu_import_phone">My phone</string>
+    <string name="menu_import_vcard">vCard</string>
+    <string name="menu_import_csv">CSV</string>
+
+    <!-- Add contact -->
+    <string name="user_contact_name">Name</string>
+    <string name="user_phone_number">Phone</string>
+    <string name="user_email">Email</string>
+    <string name="user_address">Address</string>
+    <string name="btn_add_contact">Add Contact</string>
+
     <string name="FACEBOOK_APP_ID">964234977027033</string>
     <string name="ACCOUNT_KIT_CLIENT_TOKEN">799de49b357b77afede08488ced2f721</string>
 
@@ -43,4 +64,7 @@
     <string name="phone_number_label">Phone Number</string>
     <string name="email_label">Email</string>
     <string name="na">NA</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -7,12 +7,14 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -37,8 +39,8 @@ public class MainActivity extends AppCompatActivity
         btnFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent( view.getContext(), AddContactActivity.class );
+                startActivity( intent );
             }
         });
 
@@ -111,6 +113,18 @@ public class MainActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
 
         } else if (id == R.id.nav_import) {
+
+            AlertDialog.Builder mBuilder = new AlertDialog.Builder( this );
+            View mView = getLayoutInflater().inflate(R.layout.options_import_contact, null);
+            mBuilder.setTitle( R.string.menu_import_title );
+            mBuilder.setView(mView);
+            final AlertDialog dialog = mBuilder.create();
+            dialog.show();
+
+            Button btnOptsImportPhone = findViewById( R.id.btnOptsImportPhone);
+            Button btnOptsImportVCard = findViewById( R.id.btnOptsImportVCard);
+            Button btnOptsImportCSV = findViewById( R.id.btnOptsImportCSV);
+
 
         } else if (id == R.id.nav_sync) {
 
