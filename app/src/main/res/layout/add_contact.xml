@@ -13,7 +13,7 @@
         android:id="@+id/addContactImage"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_person_outline" />
+        android:src="@mipmap/ic_person_outline" />
 
     <EditText
         android:layout_width="fill_parent"

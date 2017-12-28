@@ -37,6 +37,16 @@
     <string name="user_address">Address</string>
     <string name="btn_add_contact">Add Contact</string>
 
+    <!-- List Contacts -->
+    <string name="list_contact_name">Contact Name</string>
+    <string name="list_contact_phone">Phone</string>
+    <string name="list_contact_email">Email</string>
+    <string name="list_contact_address">Address</string>
+
+    <!-- Menu Context -->
+    <string name="mn_list_contact_edit">Edit Contact</string>
+    <string name="mn_list_contact_delete">Delete Contact</string>
+
     <string name="FACEBOOK_APP_ID">964234977027033</string>
     <string name="ACCOUNT_KIT_CLIENT_TOKEN">799de49b357b77afede08488ced2f721</string>
 
