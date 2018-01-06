@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/addContactImage"
+        android:id="@+id/imgAddImage"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:src="@mipmap/ic_person_outline" />
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/txtAddContactName"
+        android:id="@+id/txtAddName"
         android:layout_marginTop="15dp"
         android:hint="@string/user_contact_name" />
 
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:id="@+id/txtAddContactPhone"
+        android:id="@+id/txtAddPhone"
         android:layout_marginTop="15dp"
         android:hint="@string/user_phone_number" />
 
@@ -38,14 +38,14 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/textAddContactEmail"
+        android:id="@+id/txtAddEmail"
         android:hint="@string/user_email"
         android:layout_marginTop="15dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtAddContactAddress"
+        android:id="@+id/txtAddAddress"
         android:hint="@string/user_address"
         android:inputType="textPostalAddress"
         android:layout_marginTop="15dp" />

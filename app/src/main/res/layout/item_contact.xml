@@ -8,7 +8,7 @@
     <ImageView
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:id="@+id/listContactImage" />
+        android:id="@+id/lAvatar" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -20,14 +20,14 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/list_contact_name"
-            android:id="@+id/listContactName"
+            android:id="@+id/lName"
             android:layout_gravity="left|center_vertical"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/list_contact_phone"
-            android:id="@+id/listContactPhone"
+            android:id="@+id/lPhone"
             android:layout_gravity="left|center_vertical"
             android:layout_marginTop="5dp"/>
 
@@ -35,14 +35,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/list_contact_email"
-            android:id="@+id/listContactEmail"
+            android:id="@+id/lEmail"
             android:layout_gravity="left|center_vertical"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/list_contact_address"
-            android:id="@+id/listContactAddress"
+            android:id="@+id/lAddress"
             android:layout_gravity="left|center_vertical"/>
     </LinearLayout>
 
