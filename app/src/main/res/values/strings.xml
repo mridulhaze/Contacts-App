@@ -47,11 +47,8 @@
     <string name="mn_list_contact_edit">Edit Contact</string>
     <string name="mn_list_contact_delete">Delete Contact</string>
 
-    <string name="FACEBOOK_APP_ID">964234977027033</string>
-    <string name="ACCOUNT_KIT_CLIENT_TOKEN">799de49b357b77afede08488ced2f721</string>
-
-    <!--<string name="FACEBOOK_APP_ID">167282757208568</string>-->
-    <!--<string name="ACCOUNT_KIT_CLIENT_TOKEN">18afb2c8b236733a80105161547e23bd</string>-->
+    <string name="FACEBOOK_APP_ID">167282757208568</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">dae46c2cdeba35d7c878b01d05930ea1</string>
 
     <string name="permissions_get_accounts_message">
         Grant permission to read your email address from your device to pre-fill.
@@ -77,4 +74,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="contact_options">Contact Options</string>
+    <string name="edit_contact">Edit contact</string>
+    <string name="delete_contact">Delete contact</string>
 </resources>

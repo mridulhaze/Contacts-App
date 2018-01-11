@@ -1,7 +1,6 @@
 package vn.vutran.android.contacts;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -15,11 +14,13 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -27,7 +28,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import vn.vutran.android.data.DatabaseHandler;
 import vn.vutran.android.model.Contact;
@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity
     DatabaseHandler dba;
 
     Uri imageUri = Uri.parse("android.resource://vn.vutran.android.contacts/mipmap/ic_person_outline");
+
+    private static final int EDIT = 0, DELETE = 1;
+    int longClickedItemIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +75,8 @@ public class MainActivity extends AppCompatActivity
         toogle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     private void addControls() {
@@ -94,6 +99,52 @@ public class MainActivity extends AppCompatActivity
 
         refreshData();
 
+        registerForContextMenu(lvContact);
+
+        lvContact.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                longClickedItemIndex = position;
+                return false;
+            }
+        });
+
+        lvContact.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                longClickedItemIndex = i;
+                
+            }
+        });
+
+    }
+
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        menu.setHeaderIcon(R.drawable.ic_edit);
+        menu.setHeaderTitle(R.string.contact_options);
+        menu.add(Menu.NONE, EDIT, menu.NONE, R.string.edit_contact);
+        menu.add(Menu.NONE, DELETE, menu.NONE, R.string.delete_contact);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case EDIT:
+                // TODO: Implement editing a contact
+                break;
+            case DELETE:
+                dba.deleteContact(longClickedItemIndex);
+                dbContacts.remove(longClickedItemIndex);
+                contactAdapter.notifyDataSetChanged();
+                break;
+        }
+
+        return super.onContextItemSelected(item);
     }
 
     private void refreshData() {
